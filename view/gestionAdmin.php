@@ -26,13 +26,12 @@ session_start();
     <div class="form-group">
       <button onclick="window.location.href = 'ajoutGame.php';"class="btn btn-primary">ajout d'un jeu</button>
     </div>
-  <form= action="../controller/validation.php"  method="get">
+</form>
+<form action="../controller/validation.php"  method="get">
     <label for="gameName">nom du jeu:</label><br>
         <input type="text" id="gameName" name="gameName"><br>
         <button type="submit" class="btn btn-primary" >Validation</button>
-      </form>
-
-  </form>
+</form>
 <?php 
 $content =ob_get_clean();
 $titre = "Rule them all";

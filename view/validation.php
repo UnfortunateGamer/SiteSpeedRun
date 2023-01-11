@@ -2,10 +2,10 @@
 ob_start();
  
 session_start();
-require_once("../model/read.php");
 
 $runNoValid = $_SESSION["runNoValid"];
 $userName= $_SESSION["runNoValid"];
+var_dump($runNoValid);
 ?>
 <table class="table text-center">
  <tr>

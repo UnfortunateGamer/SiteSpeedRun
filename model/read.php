@@ -15,6 +15,24 @@ function recupAllInfoAdmin(){
     $result = $stmt->fetchall();
     return (!empty($result)) ? $result: 'NULL';
   }
+
+function recupInfoUser($login){
+    include('connection.php');
+    $query = "SELECT * FROM sitespeedrun.user where nickName= :nickName";
+    $query_params = array(':nickName'=>$login);
+    try
+    {
+        $stmt = $db->prepare($query);
+        $result = $stmt->execute($query_params);
+    }
+    catch(PDOException $ex){
+        die("Failed query : " . $ex->getMessage());
+    }
+    $result = $stmt->fetchall();
+    return (!empty($result)) ? $result: 'NULL';
+  }
+
+
   
 
 function readIdGame($GameName){
@@ -85,8 +103,8 @@ function readLastIdPicture(){
   }
 
   function ReadAllRunNoValidationByIdGame($IdGame){
-    include_once('connection.php');
-    $query = "SELECT * FROM Run WHERE idGame =:IdGame AND validation IS NULL ";
+    include('connection.php');
+    $query = "SELECT * FROM run WHERE idGame =:IdGame AND validation IS NULL ";
     $query_params = array(':IdGame' => $IdGame);
     try
     {
@@ -102,7 +120,7 @@ function readLastIdPicture(){
 
   function ReadAllRunNoValidation(){
     include_once('connection.php');
-    $query = "SELECT * FROM Run WHERE validation = :validation ";
+    $query = "SELECT * FROM run WHERE validation = :validation ";
     $query_params = array(':validation'=>NULL);
     try
     {

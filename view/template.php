@@ -6,9 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href = "https://bootswatch.com/5/slate/bootstrap.min.css">
+    <link rel="stylesheet" href = "../css/style.css">
+
+<?php
+
+if($_SESSION["isConnected"]==TRUE){
+        echo('<style type="text/css">#navbarColor02{visibility:blank;}</style>');
+        echp('<style type="text/css">#navbarColor01{visibility:hidden;}</style>');
+        }
+
+
+?>
+
+
 
 </head>
 <body>
+
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,6 +43,25 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="signUp.php">Inscris-toi
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Acceuil.php">Acceuil
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../controller/signOut.php">Déconnection
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="persoPage.php">Page Perso
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
