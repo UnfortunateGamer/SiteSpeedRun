@@ -13,7 +13,9 @@ if((empty($_GET["name"])) || (empty($_GET["firstname"]))  || (empty($_GET["email
 
 $tabUser = recupAllInfoAdmin();
 $count=0;
-/*
+
+
+
 for($i=0;$i<=count($tabUser);$i++){
     if($tabUser[$i]["nickName"]==$_GET["username"]){
         $_SESSION["message"] = "Pseudo déjà utilisé!";
@@ -21,7 +23,7 @@ for($i=0;$i<=count($tabUser);$i++){
         header('Location: ../view/signUp.php');
     }
 }
-*/
+
 if($count==0){
     if(strlen($_GET["password"]) >= 8){
         if(preg_match_all("/[A-Z]/",$_GET["password"]) >= 1){

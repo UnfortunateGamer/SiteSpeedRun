@@ -1,8 +1,8 @@
 <?php
 //include_once('connection.php');
 function recupAllInfoAdmin(){
-    include_once('connection.php');
-    $query = "SELECT * FROM user";
+    include('connection.php');
+    $query = "SELECT * FROM sitespeedrun.user";
     $query_params = array();
     try
     {
@@ -35,7 +35,7 @@ function readIdGame($GameName){
 
 
 function readTop10($IDGame){
-    include_once('connection.php');
+    include('connection.php');
     $query = "SELECT * FROM run WHERE idGame = :game ORDER BY time ASC LIMIT 10";
     $query_params = array(':game'=>$IDGame);
     try

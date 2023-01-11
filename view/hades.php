@@ -2,11 +2,12 @@
 ob_start();
  
 session_start();
-require_once("../model/read.php");
+include("../controller/hades.php");
 
 $top10 = $_SESSION["top10"];
 $userName= $_SESSION["top10"];
 ?>
+
 <table class="table text-center">
  <tr>
     <th>Name</th>

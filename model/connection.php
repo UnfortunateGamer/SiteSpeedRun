@@ -2,8 +2,8 @@
 
     //PAGE DE CONNECTION A LA DB
 
-    $username = "root";
-    $password = "";
+    $username = "db_user";
+    $password = "password";
     $host = "localhost";
     $dbname = "sitespeedrun";
 
