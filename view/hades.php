@@ -5,7 +5,7 @@ session_start();
 include("../controller/hades.php");
 
 $top10 = $_SESSION["top10"];
-$userName= $_SESSION["top10"];
+//$userName= $_SESSION["top10"];
 ?>
 
 <table class="table text-center">
@@ -34,3 +34,5 @@ $content =ob_get_clean();
 $titre = "Top 10 run hades";
 require ("template.php");
 ?>
+
+

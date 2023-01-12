@@ -67,7 +67,7 @@ function updateNickName($idUser, $NewNickname){
 
   function updateValidationRun($idRun){
     include('connection.php');
-      $query = "UPDATE Run SET validation=1 WHERE id= :id";
+      $query = "UPDATE run SET validation=1 WHERE id= :id";
       $query_params = array(':id'=>$idRun);
       try{
           $stmt = $db->prepare($query);

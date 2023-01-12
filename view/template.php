@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href = "https://bootswatch.com/5/slate/bootstrap.min.css">
-    <link rel="stylesheet" href = "../css/style.css">
+    <!-- <link rel="stylesheet" href = "../css/style.css"> -->
 
 <?php
+session_start();
+//echo($_SESSION["isConnected"]);
 
-if($_SESSION["isConnected"]==TRUE){
-        echo('<style type="text/css">#navbarColor02{visibility:blank;}</style>');
-        echp('<style type="text/css">#navbarColor01{visibility:hidden;}</style>');
-        }
+if($_SESSION["isConnected"]==1){
+        echo('<style type="text/css">#navbarColor02{visibility:blank;} #navbarColor01{visibility:hidden;}</style>');
+        //echo($_SESSION["isConnected"]);
+    }else {
+        echo('<style type="text/css">#navbarColor02{visibility:hidden; float: right;}</style>');
+        //echo($_SESSION["isConnected"]);
+    }
 
 
 ?>
@@ -32,12 +37,12 @@ if($_SESSION["isConnected"]==TRUE){
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="Acceuil.php">Acceuil
+                        <a class="nav-link active" href="Acceuil.php">Accueil
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="signIn.php">connecte-toi
+                        <a class="nav-link active" href="signIn.php">Connecte-toi
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>

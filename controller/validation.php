@@ -2,7 +2,9 @@
 
 session_start();
 include("../model/read.php");
+    if(isset($_GET["gameName"])){
     $_SESSION["gameName"] = $_GET["gameName"];
+    }
     $idGame= readIdGame($_SESSION["gameName"]);
     $idGame= $idGame[0]['id'];
     
