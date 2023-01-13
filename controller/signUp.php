@@ -17,9 +17,11 @@ $count=0;
 
 
 for($i=0;$i<=count($tabUser);$i++){
-    if($tabUser[$i]["nickName"]==$_GET["username"]){
+    if($tabUser[$i]["nickName"]==$_GET["userName"]){
         $_SESSION["message"] = "Pseudo déjà utilisé!";
         $count++;
+        var_dump($tabUser);
+        echo($_GET["userName"]);
         header('Location: ../view/signUp.php');
     }
 }
@@ -33,6 +35,12 @@ if($count==0){
                         $_GET["password"]=password_hash($_GET["password"], PASSWORD_BCRYPT);
                         unset($_GET["passwordC"]);
                         insertUser($_GET["name"],$_GET["firstname"],$_GET["birthdate"],$_GET["userName"],$_GET["password"],$_GET["email"]);
+                        $_SESSION['id']=$tabUSER[0]['id'];
+                        $_SESSION['name']=$tabUSER[0]['name'];
+                        $_SESSION['firstname']=$tabUSER[0]['firstname'];
+                        $_SESSION['birthdate']=$tabUSER[0]['birthdate'];
+                        $_SESSION['email']=$tabUSER[0]['Email'];
+                        $_SESSION['isConnected']=TRUE;    
                         header('Location: ../view/Acceuil.php');
                     }else{
                         $_SESSION["message"] = "Mot de passe incorrect !";

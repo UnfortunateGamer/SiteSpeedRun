@@ -66,7 +66,7 @@ if($_SESSION["isConnected"]==1){
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="persoPage.php">Page Perso
+                        <a class="nav-link active" href="persoPage.php">Page Perso de <?php echo $_SESSION["user"]?>
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>

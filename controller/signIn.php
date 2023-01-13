@@ -26,7 +26,7 @@ if($tabUSER != NULL){
         $_SESSION['birthdate']=$tabUSER[0]['birthdate'];
         $_SESSION['email']=$tabUSER[0]['Email'];
         //$_SESSION['idPicture']=$tabUSER[0]['idPicture'];
-        $_SESSION['admin']=$tabUSER[0]['admoin'];
+        $_SESSION['admin']=$tabUSER[0]['admin'];
         unset($_SESSION["mdp"]);
         header('Location: ../view/gestionAdmin.php');}
     else{

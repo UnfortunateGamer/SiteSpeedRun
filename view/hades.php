@@ -14,7 +14,7 @@ $top10 = $_SESSION["top10"];
     <th>Time</th>
     <th>Video link</th>
     <th>Validation</th>
-    <th>ID user</th>
+    <th>User</th>
   </tr>
   <?php foreach ($top10 as $run) {  ?>
   <tr>
