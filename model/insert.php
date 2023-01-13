@@ -43,8 +43,6 @@ function insertAdmin($nom, $prenom, $dateNaiss, $pseudo, $mdp, $email){
 
   function InsertRun($nom, $time, $videoLink,$IdUser, $idGame){
     include('connection.php');
-    //include('read.php');
-    //$idPicture = null;
     $query = "INSERT INTO run (name, time, videoLink, idPicture, idUser, idGame) VALUES(:nom, :time, :videoLink, :idPicture, :idUser, :idGame)";
     $query_params = array(':nom'=>$nom,
                           ':time'=>$time,
@@ -62,8 +60,8 @@ function insertAdmin($nom, $prenom, $dateNaiss, $pseudo, $mdp, $email){
   }
 
   function InsertGame($nom, $description,$idPicture){
-    include_Once('connection.php');
-    $query = "INSERT INTO Game (name,desciption,idPicture) VALUES(:nom, :description, :idPicture)";
+    include('connection.php');
+    $query = "INSERT INTO game (name,desciption,idPicture) VALUES(:nom, :description, :idPicture)";
     $query_params = array(':nom'=>$nom,
                           ':description'=>$description,
                           ':idPicture'=>$idPicture);
@@ -96,7 +94,7 @@ function insertAdmin($nom, $prenom, $dateNaiss, $pseudo, $mdp, $email){
     include('connection.php');
     include('read.php');
     
-    $query = "INSERT INTO RunStyle (name) VALUES(:nom)";
+    $query = "INSERT INTO runStyle (name) VALUES(:nom)";
     $query_params = array(':nom'=>$nom);
     try{
         $stmt = $db->prepare($query);
@@ -108,7 +106,7 @@ function insertAdmin($nom, $prenom, $dateNaiss, $pseudo, $mdp, $email){
     $idGame = readIdGame($GameName);
     $idStyle = readIdStyle($nom);
 
-    $query = "INSERT INTO GameStyle (idGame, idStyle) VALUES(:idGame, :idStyle)";
+    $query = "INSERT INTO gameStyle (idGame, idStyle) VALUES(:idGame, :idStyle)";
     $query_params = array(':idGame'=>$idGame,
                           ':idStyle'=>$idStyle);
     try{
@@ -123,7 +121,7 @@ function insertAdmin($nom, $prenom, $dateNaiss, $pseudo, $mdp, $email){
   function insertRemarqueRUn($idRun, $remarque){
 
     include('connection.php');
-    $query = "INSERT INTO Remarque (message,idRun) VALUES(:message,:idRun)";
+    $query = "INSERT INTO remarque (message,idRun) VALUES(:message,:idRun)";
     $query_params = array(':message'=>$remarque,
                           ':idRun'=>$idRun);
     try{

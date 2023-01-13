@@ -6,6 +6,10 @@ session_start();
     echo $_SESSION["message"]; 
 }*/
 //require_once("../controller/gestionAdmin.php");
+if($_SESSION['admin']!=1){
+  header('location:Acceuil.php');
+}
+
 
 ?>
 

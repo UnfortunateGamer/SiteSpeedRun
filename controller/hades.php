@@ -3,7 +3,7 @@
 session_start();
 include('../model/read.php');
     
-$GameName="hades";
+$GameName=$_SESSION['game'];
 $idGame= readIdGame($GameName);
 $idGame= $idGame[0]['id'];
 $_SESSION["idHades"] = $idGame;

@@ -2,11 +2,24 @@
 ob_start();
  
 session_start();
+$_SESSION['game']=$_GET['ChoseGame'];
 include("../controller/hades.php");
 
+
 $top10 = $_SESSION["top10"];
-//$userName= $_SESSION["top10"];
+if($_SESSION["isConnected"]==1){
+  echo('<style type="text/css">#AddRun{visibility:blank;}</style>');
+}else {
+  echo('<style type="text/css">#AddRun{visibility:hidden;}</style>');
+}
+
 ?>
+
+<form action="ajoutRun.php" method="GET" id="AddRun">
+      <input type="submit" class="btn btn-primary" value="AddRun">
+</form>
+
+
 
 <table class="table text-center">
  <tr>
@@ -31,7 +44,7 @@ $top10 = $_SESSION["top10"];
 </table>
 <?php 
 $content =ob_get_clean();
-$titre = "Top 10 run hades";
+$titre = "Top 10 run {$_SESSION['game']}";
 require ("template.php");
 ?>
 

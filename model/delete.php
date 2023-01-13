@@ -2,7 +2,7 @@
 
 function deleteRun($idRun){
     include('connection.php');
-      $query = "DELETE FROM Run WHERE id= :id";
+      $query = "DELETE FROM run WHERE id= :id";
       $query_params = array(':id'=>$idRun);
       try{
           $stmt = $db->prepare($query);

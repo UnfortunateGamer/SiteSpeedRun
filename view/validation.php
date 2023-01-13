@@ -26,6 +26,10 @@ $runNoValid = $_SESSION["runNoValid"];
         <input type="hidden" name="idRun" value="<?php echo $runNoValid[$i]['id']; ?>">
         <button type="submit">Valider</button>
         </form>
+        <form method="get" action="../controller/actionDeleteRun.php">
+        <input type="hidden" name="idRun" value="<?php echo $runNoValid[$i]['id']; ?>">
+        <button type="submit">Supprimer</button>
+        </form>
     </td>
     <?php $idUser = $runNoValid[$i]['idUser']; 
     $nameUser = readMyName($idUser);

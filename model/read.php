@@ -36,7 +36,7 @@ function recupInfoUser($login){
   
 
 function readIdGame($GameName){
-  include_once('connection.php');
+  include('connection.php');
   $query = "SELECT id FROM game WHERE name= :gameName";
   $query_params = array(':gameName'=>$GameName);
   try

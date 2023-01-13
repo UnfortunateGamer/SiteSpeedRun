@@ -16,7 +16,7 @@ if($_SESSION["isConnected"]==1){
         echo('<style type="text/css">#navbarColor02{visibility:blank;} #navbarColor01{visibility:hidden;}</style>');
         //echo($_SESSION["isConnected"]);
     }else {
-        echo('<style type="text/css">#navbarColor02{visibility:hidden; float: right;}</style>');
+        echo('<style type="text/css">#navbarColor02{visibility:hidden; }</style>');
         //echo($_SESSION["isConnected"]);
     }
 

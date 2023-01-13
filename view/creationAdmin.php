@@ -4,6 +4,10 @@ session_start();
 if(isset($_SESSION["message"])){
     echo $_SESSION["message"]; 
 }
+if($_SESSION['admin']!=1){
+  header('location:Acceuil.php');
+}
+
 
 ?>
 
