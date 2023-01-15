@@ -2,8 +2,8 @@
 
 function updateNickName($idUser, $NewNickname){
     include('connection.php');
-      $query = "UPDATE user SET nickName=$NewNickname WHERE id= :id";
-      $query_params = array(':id'=>$idUser);
+    $query = "UPDATE user SET nickName= :newNickname WHERE id= :id";
+    $query_params = array(':id'=>$idUser,':newNickname'=>$NewNickname);
       try{
           $stmt = $db->prepare($query);
           $result = $stmt->execute($query_params);
@@ -15,8 +15,8 @@ function updateNickName($idUser, $NewNickname){
 
   function updatePassword($idUser, $NewPassword){
     include('connection.php');
-      $query = "UPDATE user SET Pswd=$NewPassword WHERE id= :id";
-      $query_params = array(':id'=>$idUser);
+      $query = "UPDATE user SET Pswd= :NewPassword WHERE id= :id";
+      $query_params = array(':id'=>$idUser ,'NewPassword'=>$NewPassword);
       try{
           $stmt = $db->prepare($query);
           $result = $stmt->execute($query_params);
