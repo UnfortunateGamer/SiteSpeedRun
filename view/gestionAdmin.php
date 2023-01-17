@@ -36,6 +36,10 @@ if($_SESSION['admin']!=1){
         <input type="text" id="gameName" name="gameName"><br>
         <button type="submit" class="btn btn-primary" >Validation</button>
 </form>
+
+<form action="../controller/ban.php">
+  <input type="submit" class="btn btn-primary" value="Banir des utilisateurs">
+</form>';
 <?php 
 $content =ob_get_clean();
 $titre = "Rule them all";

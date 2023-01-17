@@ -39,7 +39,7 @@ function updateNickName($idUser, $NewNickname){
       }
   }
 
-  function upadteBan($idUser){
+  function updateBan($idUser){
     include('connection.php');
       $query = "UPDATE user SET active=0 WHERE id= :id";
       $query_params = array(':id'=>$idUser);
