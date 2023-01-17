@@ -6,7 +6,7 @@ if(isset($_SESSION["message"])){
   echo $_SESSION["message"]; 
 }
 
-if($_SESSION["admin"]==0){
+if($_SESSION["admin"]==1){
         echo('<style type="text/css">#admin{visibility:blank;}</style>');
         
     }else {

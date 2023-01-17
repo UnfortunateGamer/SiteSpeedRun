@@ -12,7 +12,7 @@ $gameName=$_GET["NomJeu"];
 
 $idUser= $_SESSION['id'];
 $idGame= readIdGame($gameName);
-$idUser= $idUser[0]['id'];
+//$idUser= $idUser[0]['id'];
 $idGame= $idGame [0]['id'];
 InsertRun($nom,$time,$videoLink,$idUser,$idGame);
 
